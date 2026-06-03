@@ -1,0 +1,28 @@
+name: Node.js
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - run: npm ci
+      - run: npm test
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: AkhileshNS/heroku-deploy@v3.15.15
+          with:
+            heroku_api_key: ${{ secrets.HEROKU_API_KEY }}
+            heroku_email: ${{ secrets.HEROKU_EMAIL }}
+            heroku_app_name: "evaluacion8"
+
+          
