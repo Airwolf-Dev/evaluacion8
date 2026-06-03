@@ -20,9 +20,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: AkhileshNS/heroku-deploy@v3.15.15
-          with:
-            heroku_api_key: ${{ secrets.HEROKU_API_KEY }}
-            heroku_email: ${{ secrets.HEROKU_EMAIL }}
-            heroku_app_name: "evaluacion8"
+        with:
+          heroku_api_key: ${{ secrets.HEROKU_API_KEY }}
+          heroku_email: ${{ secrets.HEROKU_EMAIL }}
+          heroku_app_name: "evaluacion8"
 
           
